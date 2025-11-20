@@ -1,4 +1,4 @@
-cask "srware-iron-arm" do
+cask "srware-iron" do
   arch = Hardware::CPU.arm? ? "macARM" : "mac"
 
   version "135.0.0.0"
