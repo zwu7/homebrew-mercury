@@ -9,8 +9,8 @@ cask "srware-iron" do
   homepage "https://www.srware.net/iron/"
 
   livecheck do
-    url homepage
-    regex(%r{macOS.*?Version:\s*(\d+(?:\.\d+)*)}i)
+    url "https://www.srware.net/iron/"
+    regex(/macOS.*?Version:\s*(\d+(?:\.\d+)*)/i)
   end
 
   auto_updates true
@@ -31,14 +31,14 @@ cask "srware-iron" do
     <<~EOS
       SRWare Iron is a privacy-focused browser that removes tracking features found in standard Chromium browsers.
       
-      Note: This cask is for Apple Silicon (ARM) Macs. If you have an Intel Mac, you may need a different version.
+      Note: This cask supports both Apple Silicon (ARM) and Intel Macs.
     EOS
   end
 
   if Hardware::CPU.arm?
     sha256 "3c66c21a6e8fcb34853aecee49bf57f11df1f669deeda1f9f41d73e854efa453"
   else
-    # SHA256 for Intel version would go here
+    # You'll need to add the SHA256 for Intel version here
     # sha256 "..."
   end
 end
